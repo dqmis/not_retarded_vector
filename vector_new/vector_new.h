@@ -258,7 +258,7 @@ namespace nr {
 		iterator _capacity;
 
 		iterator enlarge(size_t n, iterator it = 0) {
-			if (n == 0) { clear(); return arr; }
+			if (n <= 0) n = 2;
 			if (n == _capacity - arr) return arr;
 
 			iterator c_arr = alloc.allocate(n);
